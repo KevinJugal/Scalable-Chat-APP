@@ -2,16 +2,16 @@ import { Server, Socket} from "socket.io";
 import Redis from "ioredis";
 
 const pub = new Redis({
-    host : 'caching-384d5d0-jugal-chat.h.aivencloud.com',
-    port : 27526,
+    host : '',//your host name
+    port : ,//your port number
     username : 'default',
-    password : 'AVNS_E2u2IkdzYAvaTwT_lIC'
+    password : ''//your password
 });
 const sub = new Redis({
-    host : 'caching-384d5d0-jugal-chat.h.aivencloud.com',
-    port : 27526,
+    host : '',//your host name
+    port : ,//your port number
     username : 'default',
-    password : 'AVNS_E2u2IkdzYAvaTwT_lIC'
+    password : ''//your password
 });
 
 class SocketService{
