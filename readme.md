@@ -36,3 +36,21 @@ The Socket service establishes a server with a Redis-backed pub/sub system. It s
 socket.on('event:message', async ({ message }: { message: String }) => {
   await pub.publish('MESSAGES', JSON.stringify({ message }));
 });
+```
+Frontend (Next.js with React)
+The frontend client is set up to listen to WebSocket messages using the socket.io-client library.
+```bash
+const { sendMessage, messages } = useSocket();
+```
+Context API
+The app uses a SocketProvider to provide WebSocket functionality throughout the component tree.
+
+## Usage
+Once installed and running, open your browser and go to http://localhost:8000.
+Enter messages, and watch them appear in real-time for all connected users.
+
+## License
+This project is licensed under the MIT License.
+```bash
+git clone https://github.com/KevinJugal/Scalable-Chat-APP.git
+```
