@@ -28,3 +28,11 @@ A real-time chat application built with **Next.js**, **Socket.IO**, and **Redis*
    ```bash
    git clone https://github.com/your-username/Scalable-Chat-APP.git
    cd Scalable-Chat-APP
+
+##socket-service
+Backend (Node.js with Socket.IO)
+The Socket service establishes a server with a Redis-backed pub/sub system. It subscribes to the MESSAGES Redis channel and listens for incoming WebSocket messages:
+```bash
+socket.on('event:message', async ({ message }: { message: String }) => {
+  await pub.publish('MESSAGES', JSON.stringify({ message }));
+});
